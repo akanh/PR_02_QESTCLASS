@@ -79,11 +79,11 @@ const ClassificationResults = ({ results, loading, error }) => {
   }
 
   if (loading) {
-    return (
-      <LoadingSpinner>
-        Sorunuz analiz ediliyor...
-      </LoadingSpinner>
-    );
+          return (
+            <LoadingSpinner>
+              Your question is being analyzed...
+            </LoadingSpinner>
+          );
   }
 
   if (!results) {
@@ -92,7 +92,7 @@ const ClassificationResults = ({ results, loading, error }) => {
 
   return (
     <ResultsContainer>
-      <ResultTitle>Tahmin Sonuçları</ResultTitle>
+          <ResultTitle>Prediction Results</ResultTitle>
       {departments.map(dept => {
         const confidence = results.predictions[dept] || 0;
         const isHighest = dept === getHighestConfidenceDept();

@@ -46,7 +46,7 @@ function App() {
       case 'home':
         return 'Ana Sayfa';
       case 'classification':
-        return 'Departman Sınıflandırma';
+        return 'Department Classification';
       case 'models':
         return 'ML Modelleri';
       case 'analytics':
@@ -54,7 +54,7 @@ function App() {
       case 'settings':
         return 'Ayarlar';
       case 'help':
-        return 'Yardım';
+        return 'Help';
       default:
         return 'Dashboard';
     }
@@ -63,17 +63,17 @@ function App() {
   const getPageSubtitle = () => {
     switch (activeMenu) {
       case 'home':
-        return 'Departman sınıflandırma sistemine hoş geldiniz';
+        return 'Welcome to the department classification system';
       case 'classification':
-        return 'Sorularınızı doğru departmana yönlendirin';
+        return 'Route your questions to the correct department';
       case 'models':
-        return 'Machine Learning modellerini yönetin';
+        return 'Manage Machine Learning models';
       case 'analytics':
-        return 'Sistem performansını analiz edin';
+        return 'Analyze system performance';
       case 'settings':
-        return 'Sistem ayarlarını düzenleyin';
+        return 'Edit system settings';
       case 'help':
-        return 'Yardım ve dokümantasyon';
+        return 'Help and documentation';
       default:
         return '';
     }
@@ -88,7 +88,7 @@ function App() {
       case 'models':
         return <div style={{textAlign: 'center', padding: '3rem'}}>
           <h2>ML Modelleri</h2>
-          <p>Bu sayfa geliştirilme aşamasında...</p>
+          <p>This page is under development...</p>
         </div>;
       case 'analytics':
         return <div style={{textAlign: 'center', padding: '3rem'}}>
@@ -102,7 +102,7 @@ function App() {
         </div>;
       case 'help':
         return <div style={{textAlign: 'center', padding: '3rem'}}>
-          <h2>Yardım</h2>
+          <h2>Help</h2>
           <p>Bu sayfa geliştirilme aşamasında...</p>
         </div>;
       default:

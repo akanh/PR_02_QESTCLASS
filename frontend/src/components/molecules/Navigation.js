@@ -59,7 +59,7 @@ const Navigation = ({ activeMenu, onMenuChange }) => {
     },
     {
       id: 'classification',
-      label: 'Departman Sınıflandırma',
+      label: 'Department Classification',
       icon: '🎯'
     },
     {
@@ -82,7 +82,7 @@ const Navigation = ({ activeMenu, onMenuChange }) => {
     },
     {
       id: 'help',
-      label: 'Yardım',
+      label: 'Help',
       icon: '❓'
     }
   ];

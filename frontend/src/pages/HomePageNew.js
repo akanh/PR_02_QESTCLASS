@@ -56,31 +56,31 @@ const HomePage = () => {
   const features = [
     {
       icon: '🎯',
-      title: 'Akıllı Sınıflandırma',
-      description: 'Sorularınızı otomatik olarak doğru departmana yönlendiren gelişmiş ML algoritmaları.'
+      title: 'Smart Classification',
+      description: 'Advanced ML algorithms that automatically route your questions to the correct department.'
     },
     {
       icon: '🤖',
-      title: 'Çoklu Model Desteği',
-      description: 'Naive Bayes, SVM, Random Forest ve Logistic Regression modellerini karşılaştırın.'
+      title: 'Multi-Model Support',
+      description: 'Compare Naive Bayes, SVM, Random Forest, and Logistic Regression models.'
     },
     {
       icon: '📊',
-      title: 'Detaylı Analitik',
-      description: 'Model performansını izleyin ve güven skorları ile tahmin kalitesini değerlendirin.'
+      title: 'Detailed Analytics',
+      description: 'Monitor model performance and evaluate prediction quality with confidence scores.'
     },
     {
       icon: '⚡',
-      title: 'Hızlı ve Güvenilir',
-      description: 'Gerçek zamanlı sınıflandırma ile anında sonuç alın.'
+      title: 'Fast and Reliable',
+      description: 'Get instant results with real-time classification.'
     }
   ];
 
   return (
     <Container>
-      <Title>Hoş Geldiniz!</Title>
+      <Title>Welcome!</Title>
       <Subtitle>
-        Departman Sınıflandırma Sistemi ile sorularınızı doğru departmana yönlendirin
+        Route your questions to the correct department with the Department Classification System
       </Subtitle>
       
       <FeatureGrid>
