@@ -4,6 +4,7 @@ FastAPI Application Entry Point
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.routes.ml_routes import router as ml_router
+from api.routes.classification_routes import router as classification_router
 from common.config import settings
 from common.utils import setup_logging
 
@@ -28,6 +29,11 @@ app.add_middleware(
 
 # Include routers
 app.include_router(ml_router, prefix=f"/api/{settings.api_version}")
+app.include_router(
+    classification_router,
+    prefix=f"/api/{settings.api_version}"
+)
+
 
 @app.get("/")
 async def root():
@@ -37,6 +43,7 @@ async def root():
         "version": "1.0.0",
         "docs": "/docs"
     }
+
 
 @app.get("/health")
 async def health():

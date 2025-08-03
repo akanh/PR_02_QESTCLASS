@@ -1,5 +1,6 @@
 """
-Machine Learning models using scikit-learn
+Infrastructure - Base Machine Learning Models
+Generic ML model implementations using scikit-learn
 """
 import numpy as np
 import pandas as pd

@@ -1,9 +1,11 @@
 /**
  * Main App Component
  */
-import React from 'react';
+import React, { useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
-import HomePage from './pages/HomePage';
+import AppLayout from './components/templates/AppLayout';
+import HomePageNew from './pages/HomePageNew';
+import DepartmentClassificationPage from './pages/DepartmentClassificationPage';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -37,10 +39,88 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+  const [activeMenu, setActiveMenu] = useState('classification');
+
+  const getPageTitle = () => {
+    switch (activeMenu) {
+      case 'home':
+        return 'Ana Sayfa';
+      case 'classification':
+        return 'Departman Sınıflandırma';
+      case 'models':
+        return 'ML Modelleri';
+      case 'analytics':
+        return 'Analitik';
+      case 'settings':
+        return 'Ayarlar';
+      case 'help':
+        return 'Yardım';
+      default:
+        return 'Dashboard';
+    }
+  };
+
+  const getPageSubtitle = () => {
+    switch (activeMenu) {
+      case 'home':
+        return 'Departman sınıflandırma sistemine hoş geldiniz';
+      case 'classification':
+        return 'Sorularınızı doğru departmana yönlendirin';
+      case 'models':
+        return 'Machine Learning modellerini yönetin';
+      case 'analytics':
+        return 'Sistem performansını analiz edin';
+      case 'settings':
+        return 'Sistem ayarlarını düzenleyin';
+      case 'help':
+        return 'Yardım ve dokümantasyon';
+      default:
+        return '';
+    }
+  };
+
+  const renderPage = () => {
+    switch (activeMenu) {
+      case 'home':
+        return <HomePageNew />;
+      case 'classification':
+        return <DepartmentClassificationPage />;
+      case 'models':
+        return <div style={{textAlign: 'center', padding: '3rem'}}>
+          <h2>ML Modelleri</h2>
+          <p>Bu sayfa geliştirilme aşamasında...</p>
+        </div>;
+      case 'analytics':
+        return <div style={{textAlign: 'center', padding: '3rem'}}>
+          <h2>Analitik</h2>
+          <p>Bu sayfa geliştirilme aşamasında...</p>
+        </div>;
+      case 'settings':
+        return <div style={{textAlign: 'center', padding: '3rem'}}>
+          <h2>Ayarlar</h2>
+          <p>Bu sayfa geliştirilme aşamasında...</p>
+        </div>;
+      case 'help':
+        return <div style={{textAlign: 'center', padding: '3rem'}}>
+          <h2>Yardım</h2>
+          <p>Bu sayfa geliştirilme aşamasında...</p>
+        </div>;
+      default:
+        return <DepartmentClassificationPage />;
+    }
+  };
+
   return (
     <>
       <GlobalStyle />
-      <HomePage />
+      <AppLayout
+        activeMenu={activeMenu}
+        onMenuChange={setActiveMenu}
+        title={getPageTitle()}
+        subtitle={getPageSubtitle()}
+      >
+        {renderPage()}
+      </AppLayout>
     </>
   );
 }

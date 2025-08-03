@@ -4,7 +4,7 @@ Machine Learning Service Layer
 import numpy as np
 import pandas as pd
 from typing import Dict, List, Any
-from business.models.ml_models import ClassificationModel, RegressionModel
+from infrastructure.ml.base_models import ClassificationModel, RegressionModel
 from common.exceptions import ValidationError, PredictionError
 from common.utils import format_response
 import logging
